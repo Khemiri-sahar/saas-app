@@ -1,7 +1,7 @@
-import { SignIn } from '@clerk/nextjs'
+import {  SignUp } from '@clerk/nextjs'
 
 export default function Page() {
   return <main className='flex justify-center items-center'>
-        <SignIn routing='path' path='/sign-in' />
+        <SignUp routing='path' path='/sign-up' />
     </main>
 }

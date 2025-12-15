@@ -14,18 +14,19 @@ export const metadata: Metadata = {
   description: "Real-time AI Teaching Platform",
 };
 
-export default function RootLayout({ children, }: Readonly<{
+export default function RootLayout({ children, }: {
   children: React.ReactNode;
-}>) {
+}) {
+  const publishbleKey =  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
   return (
+        <ClerkProvider appearance= { {variables: { colorPrimary: '#fe5933' } } } publishableKey={publishbleKey}>
     <html lang="en">
       <body className={`${bricolage.variable} antialiased`}>
-        <ClerkProvider appearance= { {variables: { colorPrimary: '#fe5933' } } }>  
           <Navbar />
           {children}
-        </ClerkProvider>
       </body>
     </html>
+        </ClerkProvider>
   );
 }
 
