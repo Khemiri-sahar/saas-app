@@ -19,14 +19,14 @@ export default function RootLayout({ children, }: {
 }) {
   const publishbleKey =  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
   return (
-        <ClerkProvider appearance= { {variables: { colorPrimary: '#fe5933' } } } publishableKey={publishbleKey}>
-    <html lang="en">
-      <body className={`${bricolage.variable} antialiased`}>
+    <ClerkProvider appearance= { {variables: { colorPrimary: '#fe5933' } } } publishableKey={publishbleKey}>
+      <html lang="en">
+        <body className={`${bricolage.variable} antialiased`}>
           <Navbar />
           {children}
-      </body>
-    </html>
-        </ClerkProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
 

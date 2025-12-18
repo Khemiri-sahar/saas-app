@@ -14,12 +14,11 @@ const CompanionSession = async({ params } : CompanionSessionPageProps) => {
   const companion = await getCompanion(id);
   const user = await currentUser();
 
-  const { name, subject, topic, title, duration} = companion;
-
   if(!user) redirect('/sign-in');
-  if(!name) redirect("/companions");
+  if(!companion) redirect("/companions");
 
-
+  const { name, subject, topic, title, duration} = companion;
+  
   return (
     <main>
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">

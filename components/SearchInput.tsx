@@ -48,4 +48,4 @@ const SearchInput = () => {
         </div>
     )
 }
-export default SearchInput;
+export default SearchInput
