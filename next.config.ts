@@ -6,7 +6,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
         { hostname: 'img.clerk.com'}
     ]
-  }
+  },
+  webpack: (config, { dev }) => {
+    if (dev) {
+      config.cache = false
+    }
+    return config
+  },
 };
 
 export default withSentryConfig(nextConfig, {

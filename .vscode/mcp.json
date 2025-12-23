@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "Sentry": {
+      "url": "https://mcp.sentry.dev/mcp/insat-00/javascript-nextjs",
+      "type": "http"
+    }
+  }
+}
